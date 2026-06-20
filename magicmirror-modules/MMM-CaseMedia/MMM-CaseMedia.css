@@ -1,0 +1,100 @@
+.MMM-CaseMedia {
+  width: auto;
+  max-width: none;
+}
+
+.MMM-CaseMedia .module-content {
+  width: auto;
+  max-width: none;
+}
+
+.MMM-CaseMedia .mm-casemedia-root {
+  --mm-casemedia-width: 360px;
+  --mm-casemedia-height: 360px;
+  --mm-casemedia-radius: 24px;
+  --mm-casemedia-dimmer: 0;
+  --mm-casemedia-position: center center;
+  width: var(--mm-casemedia-width);
+  height: var(--mm-casemedia-height);
+}
+
+.MMM-CaseMedia .mm-casemedia-root.is-background {
+  width: 100vw;
+  height: 100vh;
+}
+
+.MMM-CaseMedia .mm-casemedia-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  border-radius: var(--mm-casemedia-radius);
+}
+
+.MMM-CaseMedia .mm-casemedia-root.is-background .mm-casemedia-stage {
+  border-radius: 0;
+}
+
+.MMM-CaseMedia .mm-casemedia-root.shape-original .mm-casemedia-stage {
+  border-radius: 0;
+}
+
+.MMM-CaseMedia .mm-casemedia-root.shape-square {
+  width: var(--mm-casemedia-width);
+  height: var(--mm-casemedia-width);
+}
+
+.MMM-CaseMedia .mm-casemedia-root.shape-circle {
+  width: var(--mm-casemedia-width);
+  height: var(--mm-casemedia-width);
+}
+
+.MMM-CaseMedia .mm-casemedia-root.shape-circle .mm-casemedia-stage {
+  border-radius: 50%;
+}
+
+.MMM-CaseMedia .mm-casemedia-media,
+.MMM-CaseMedia .mm-casemedia-empty {
+  width: 100%;
+  height: 100%;
+}
+
+.MMM-CaseMedia .mm-casemedia-media {
+  display: block;
+  object-fit: cover;
+  object-position: var(--mm-casemedia-position);
+  background: #000;
+}
+
+.MMM-CaseMedia .mm-casemedia-root.fit-contain .mm-casemedia-media {
+  object-fit: contain;
+}
+
+.MMM-CaseMedia .mm-casemedia-root.fit-fill .mm-casemedia-media {
+  object-fit: fill;
+}
+
+.MMM-CaseMedia .mm-casemedia-root.fit-scale-down .mm-casemedia-media {
+  object-fit: scale-down;
+}
+
+.MMM-CaseMedia .mm-casemedia-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #d7d7d7;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.MMM-CaseMedia .mm-casemedia-dimmer {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--mm-casemedia-dimmer));
+  pointer-events: none;
+}
