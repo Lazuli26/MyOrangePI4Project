@@ -1,3 +1,4 @@
 fastapi>=0.116,<1.0
 uvicorn[standard]>=0.35,<1.0
 tinytuya>=1.16,<2.0
+apscheduler>=3.10,<4.0

@@ -26,6 +26,12 @@ class Settings:
     bind_host: str = os.getenv("AC_BIND_HOST", "127.0.0.1").strip()
     bind_port: int = int(os.getenv("AC_BIND_PORT", "8008"))
     api_token: str = os.getenv("AC_API_TOKEN", "").strip()
+    smart_db_path: str = os.getenv(
+        "SMART_DB_PATH", str(Path(__file__).with_name("smart_controller.db"))
+    ).strip()
+    frontend_dist_path: str = os.getenv(
+        "FRONTEND_DIST_PATH", str(Path(__file__).with_name("frontend").joinpath("dist"))
+    ).strip()
     tuya_device_id: str = os.getenv("TUYA_DEVICE_ID", "").strip()
     tuya_device_ip: str = os.getenv("TUYA_DEVICE_IP", "").strip()
     tuya_local_key: str = os.getenv("TUYA_LOCAL_KEY", "").strip()

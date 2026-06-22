@@ -277,7 +277,8 @@ class AcControlGui(tk.Tk):
             try:
                 result = api_request(base_url, api_token, method, path, payload)
             except Exception as exc:  # pragma: no cover - UI-level failure path
-                self.after(0, lambda: self._handle_error(description, str(exc)))
+                message = str(exc)
+                self.after(0, lambda: self._handle_error(description, message))
                 return
             self.after(0, lambda: self._handle_success(description, result, sync_controls))
 
@@ -353,7 +354,7 @@ class AcControlGui(tk.Tk):
             "target_temp_c": int(self.temp_var.get()),
             "fan_speed": self.fan_var.get(),
         }
-        self._run_request("Apply core controls", "POST", "/ac/apply", payload)
+        self._run_request("Apply core controls", "POST", "/ac/apply-batch", payload)
 
     def apply_extras(self) -> None:
         payload = {
@@ -363,7 +364,7 @@ class AcControlGui(tk.Tk):
             "horizontal_swing": self.horizontal_swing_var.get(),
             "vertical_swing": self.vertical_swing_var.get(),
         }
-        self._run_request("Apply extra controls", "POST", "/ac/apply", payload)
+        self._run_request("Apply extra controls", "POST", "/ac/apply-batch", payload)
 
     def apply_all(self) -> None:
         payload = {
@@ -376,7 +377,7 @@ class AcControlGui(tk.Tk):
             "horizontal_swing": self.horizontal_swing_var.get(),
             "vertical_swing": self.vertical_swing_var.get(),
         }
-        self._run_request("Apply full state", "POST", "/ac/apply", payload)
+        self._run_request("Apply full state", "POST", "/ac/apply-batch", payload)
 
 
 def main() -> None:

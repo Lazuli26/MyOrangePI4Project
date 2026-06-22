@@ -16,6 +16,8 @@
   - NAS setup note for exposing the attached 500 GB USB drive over SMB on the local network.
 - `OPENCLAW-INSTALL-2026-06-03.md`
   - OpenClaw installation record for the Orange Pi, including install path and verification commands.
+- `AC-CONTROL-SERVICE-DEPLOY-2026-06-19.md`
+  - Deployment record for hosting the local AC control API and smart-controller LAN web app on the Orange Pi with a systemd service.
 - `XRDP-AUTOLOGIN-CHANGE-2026-06-03.md`
   - Notes for the LightDM autologin change, XRDP rationale, OpenClaw impact, and rollback steps.
 - `orange-pi-4-pro-system-profile-2026-06-03.md`

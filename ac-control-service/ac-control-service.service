@@ -1,0 +1,17 @@
+[Unit]
+Description=AC Control Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=orangepi
+Group=orangepi
+WorkingDirectory=/home/orangepi/ac-control-service
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/orangepi/ac-control-service/.venv/bin/python -m uvicorn run:app --host 0.0.0.0 --port 8008
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
